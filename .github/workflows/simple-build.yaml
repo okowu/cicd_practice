@@ -1,9 +1,19 @@
-name: simple-java-build
+# This is a basic workflow to build a Java project with Maven
+name: build
 
-on: [pull_request]
+# Trigger the workflow on push or pull request
+on:
+  pull_request:
 
+  # Allows to run the workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs
 jobs:
+  # This workflow contains a single job called "build"
   build:
+    # The type of runner that the job will run on
     runs-on: amazoncorretto:22-jdk
     steps:
-      - run: mvn package
+      - name: Execute maven package
+        run: mvn package
