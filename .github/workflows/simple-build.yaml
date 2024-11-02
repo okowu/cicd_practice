@@ -1,0 +1,9 @@
+name: simple-java-build
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: amazoncorretto:22-jdk
+    steps:
+      - run: mvn package
