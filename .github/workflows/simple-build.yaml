@@ -15,5 +15,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: amazoncorretto:22-jdk
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
       - name: Execute maven package
         run: mvn package
